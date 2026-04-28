@@ -1,0 +1,435 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    background-color: #d6eeff;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.input-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 996;
+    background: #66a3ff;
+    /*background: #e43c5c;*/
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    transition: all 0.4s;
+}
+  
+.back-to-top i {
+    font-size: 28px;
+    color: #fff;
+    line-height: 0;
+}
+  
+.back-to-top:hover {
+    background: #66a3ff;
+    /*background: #e9607a;*/
+    color: #fff;
+}
+  
+.back-to-top.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* ----------------------  END BACK-TOP  --------------------- */
+
+/* ----------------------  HEADER  --------------------- */
+header {
+    background-color: #004aad;
+    color: #fff;
+}
+header .logo {
+    font-size: 30px;
+    margin: 0;
+    padding: 10px 0;
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+  
+header .logo a {
+    color: #fff;
+}
+  
+header .logo img {
+    max-width: 40%;
+    height: auto;
+}
+  
+header h1 {
+    float: left;
+    padding: 10px 0;
+}
+
+.colom {
+    width: 90%;
+    margin: 0 auto;
+    text-align: justify; /* Posisikan di tengah horizontal */
+}
+
+.colom:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+  
+/* ----------------------  END HEADER  --------------------- */
+
+/* ----------------------  DROPDOWN  --------------------- */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    padding-top: 20px;
+    padding-left: 200px;
+}
+  
+.dropdown ul {
+    display: block;
+    position: absolute;
+    left: 24px;
+    top: calc(100% + 30px);
+    margin: 0;
+    padding: 10px 0;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    background: #fff;
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+    transition: 0.3s;
+}
+  
+.dropdown ul li {
+    min-width: 200px;
+}
+
+.dropdown ul a {
+    padding: 10px 20px;
+    font-size: 14px;
+    text-transform: none;
+    color: #493c3e;
+}
+
+.dropdown ul a i {
+    font-size: 12px;
+}
+  
+.dropdown ul a:hover,
+.dropdown ul .active:hover,
+.dropdown ul li:hover>a {
+  color: #004AAD;
+}
+  
+.dropdown:hover>ul {
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
+}
+
+@media (max-width: 1366px) {
+    .dropdown .dropdown ul {
+      left: -3%;
+    }
+  
+    .dropdown:hover>ul {
+      left: -3%;
+    }
+}
+
+/* Responsif untuk perangkat seluler */
+@media screen and (max-width: 768px) {
+    .dropdown ul {
+      position: static;
+      display: none;
+      width: 100%;
+    }
+  
+    .dropdown:hover ul {
+      display: block;
+    }
+}
+
+/*--------------------------------------------------------------
+# CONTENT
+--------------------------------------------------------------*/
+
+
+.section {
+    padding: 30px 0px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center; /* Posisikan di tengah horizontal */
+}
+
+.container:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.container h1 {
+    font-size: 35px;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+/* Style search input field */
+input[type="text"] {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    text-align: justify;
+    width: 60%;
+    padding: 10px;
+    margin: 15px 0 25px 0;
+}
+
+/* Style search button */
+button[type="submit"] {
+    padding: 12px 12px;
+    background-color: #004aad;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Style garis saat input dalam fokus */
+input[type="text"]:focus {
+    border: 0.15em solid #333; /* Tampilan garis saat dalam fokus */
+}
+
+/* Hover effect for search button */
+button[type="submit"]:hover {
+    background-color: #555;
+}
+
+/* Media queries untuk perangkat berukuran kecil (contoh: smartphone) */
+@media (max-width: 768px) {
+    input[type="text"] {
+        width: 100%; /* Buat lebar input 100% untuk perangkat berukuran kecil */
+        margin-right: 0 auto; /* Hilangkan margin kanan pada input */
+        margin-left: 0 auto;
+        position: relative;
+        max-width: 400px; /* Batas maksimum lebar input */
+    }
+}
+
+/* Media queries untuk perangkat berukuran kecil (contoh: smartphone) */
+@media (max-width: 768px) {
+    input[type="submit"] {
+        width: 100%; /* Buat lebar input 100% untuk perangkat berukuran kecil */
+        margin-right: 0; /* Hilangkan margin kanan pada input */
+        padding-bottom: 10px;
+    }
+}
+
+.slider-container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    max-width: 1300px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    background-color: #ffff;
+}
+
+.slider-container h1 {
+    font-size: 35px;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    display: flex;
+    padding: 10px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: 50%;
+    height: auto;
+}
+
+/* Media queries untuk perangkat berukuran kecil (contoh: smartphone) */
+@media (max-width: 768px) {
+    .slider-container {
+        width: 100%; /* Buat lebar input 100% untuk perangkat berukuran kecil */
+        margin-right: 0 auto; /* Hilangkan margin kanan pada input */
+        margin-left: 0 auto;
+        position: relative;
+        max-width: 500px; /* Batas maksimum lebar input */
+    }
+}
+
+/*--------------------------------------------------------------
+# SEARCH COLOM
+--------------------------------------------------------------*/
+
+.search {
+    padding: 15px 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.search input[type=text] {
+    width: 60%;
+    padding: 10px;
+}
+
+.search input[type=submit] {
+    padding: 12px 15px;
+    background-color: #004aad;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+    color: #444444;
+    font-size: 14px;
+    background: #bcbcbc;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  #footer p {
+    padding-top: 1%;
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    padding-left: 0px;
+    padding-bottom: 0px;
+  }
+  
+  @media (max-width: 767px) {
+    #footer p {
+        padding-top: 1%;
+        font-size: 12px; /* Ubah ukuran font untuk tampilan seluler */
+    }
+  }
+  
+  #footer .container {
+    background-color: #7a7a7a;
+    width: 100%; /* Membuat box 100% lebar dari parentnya (footer) */
+    max-width: 1500px; /* Membatasi lebar maksimum box agar tidak terlalu lebar */
+    margin: 0 auto; 
+  }
+  
+  #footer .container .row {
+    width: 90%;
+    margin: 0 auto;
+    text-align: justify; /* Posisikan di tengah horizontal */
+    background-color: #7a7a7a;
+  }
+  
+  #footer .container .row1 {
+    width: 90%;
+    margin: 0 auto;
+    text-align: right;
+    background-color: #7a7a7a;
+    padding-left: 800px;
+  }
+  
+  #footer .container .row:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  
+  #footer .container .row h2{
+    font-size: 15px;
+    font-family: sans-serif;
+    font-style: italic;
+    text-align: justify;
+    color: white;
+    font-weight: bold;
+  }
+  
+  @media (max-width: 1200px) {
+    #footer .container .row, #footer .container .row1 {
+        width: 100%;
+        text-align: center;
+        padding-left: 0;
+    }
+  }
+  
+  #footer .social-links a {
+    font-size: 18px;
+    display: inline-block;
+    background: #7a7a7a;
+    /*background: #e43c5c;*/
+    color: #fff;
+    line-height: 1;
+    padding: 8px 0;
+    margin-right: 4px;
+    border-radius: 50%;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+  }
+  
+  /* Media query untuk tampilan seluler (misalnya, ukuran layar < 768px) */
+  @media (max-width: 767px) {
+    #footer .container p {
+      font-size: 15px; /* Ubah ukuran font untuk tampilan seluler */
+      position: static; /* Kembalikan posisi elemen p ke posisi aslinya */
+      text-align: center;
+      padding-left: 0;
+    }
+  
+    #footer .social-links a {
+      font-size: 16px; /* Ubah ukuran font ikon media sosial untuk tampilan seluler */
+      width: 30px; /* Sesuaikan lebar ikon media sosial untuk tampilan seluler */
+      height: 30px;
+    }
+  }
+  
+  #footer .social-links a:hover {
+    background: #d9d9d9;
+    /*background: #d01d3f;*/
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  
