@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+    <title>Home Admin - PST BPS Surabaya</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+  
+    <!-- Favicons -->
+    <link href="static/img/icon/logo_pst-20230313081224.png" rel="icon">
+    <link href="static/img/icon/logo_pst-20230313081224.png" rel="apple-touch-icon">
+  
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  
+    <!-- Vendor CSS Files -->
+    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="static/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
+    <!-- Template Main CSS File -->
+    <link href="static/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard_admin.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!--header -->
+    <header>
+        <div class="container">
+            <h1><a href="">Ruang Pemeliharaan</a></h1>
+            <ul>
+                <li><a href="{{url_for('dashboard_admin')}}">Dashboard</a></li>
+                <li><a href="{{url_for('daftar_tamu')}}">Daftar Tamu</a></li>
+                <li><a href="{{url_for('daftar_publikasi')}}">Daftar Publikasi</a></li>
+                <li><a href="{{url_for('daftar_konsultasi')}}">Daftar Konsultasi</a></li>
+                <li><a href="{{url_for('survey_kepuasan')}}">Survey Kepuasan</a></li>
+                <li><a href="{{url_for('home')}}">Keluar</a></li>
+            </ul>
+        </div>
+
+    </header>
+    <!--content-->
+    <div class="section">
+        <div class="container">
+            <h3>Tambah Data Konsultasi</h3>
+            <div class="box">
+                <form action="" method="POST">
+                    <input type="text" name="email" autofocus placeholder="Email" autocomplete="off" class="input-control" required>
+                    <input type="text" name="jenis_konsultasi" autofocus placeholder="Jenis Konsultasi" autocomplete="off" class="input-control" required>
+                    <input type="text" name="pesan_konsultasi" autofocus placeholder="Pesan Konsultasi" autocomplete="off" class="input-control" required>
+                    <input type="text" name="tanggal_konsultasi" autofocus placeholder="Tanggal Konsultasi" autocomplete="off" class="input-control" required>
+                    <input type="submit" name="submit" value="Tambah" class="btn">
+                </form>
+                <!--{% if feedback %}
+                    {# The form for editing data #}
+                    {# Your existing PHP code can be translated to Jinja2 as needed #}
+                    {% if request.method == 'POST' %}
+                        {# Handle form submission #}
+                        {% set nama = request.publikasi['nama'] %}
+                        {% set update = tamu.update({'user': nama}) %}
+                        {% if update %}
+                            <script>alert("Data berhasil dirubah")</script>
+                            <script>window.location="edit-publikasi.html"</script>
+                        {% else %}
+                            {{ "gagal tambah data, coba lagi!" + publikasi.error }}
+                        {% endif %}
+                    {% endif %}
+                {% endif %}-->
+            </div>
+        </div>
+    </div>
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+    <p>Badan Pusat Statistik Kota Surabaya<br>
+        Jl. A. Yani 152 E Surabaya 60231 Jawa Timur Indonesia, Telp (62-31) 82516020, Faks (62-31) 8296691, Mailbox : bps3578@bps.go.id<br>
+        Hak Cipta &copy; 2023 Badan Pusat Statistik<br>
+        Semua Hak Dilindungi</p>
+    <!--Copyright-->
+    <div class="container d-md-flex py-4">
+        <div class="me-md-auto text-center text-md-start">
+            <div class="container">
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/tempo-free-onepage-bootstrap-theme/ -->
+                <div class="row">
+                    <h2>Badan Pusat Statistik Kota Surabaya - 2023</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row1">
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="https://twitter.com/bps_statistics" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="https://www.facebook.com/bpsstatistics/" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="https://www.instagram.com/bpskotasurabaya/" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="https://youtube.com/@bpskotasurabaya3578?si=6hizIBuXB3ycNiZb" class="youtube"><i class="bx bxl-youtube"></i></a>
+                <!--<a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>-->
+                <!--<a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>-->
+            </div>
+        </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <!-- Vendor JS Files -->
+  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/js/main.js"></script>
+
+
+</body>
+
+</html>

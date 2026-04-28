@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Admin or User| Pelayanan Statistik Terpadu BPS Surabaya</title> 
+
+    <link rel="stylesheet" href="static/css/pilihan.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="title"><span>Masuk Sebagai :</span></div>
+        <form>
+          <div class="row button">
+            <!--<a href="{{url_for('login_admin')}}"><input type="submit" value="Pengelola"></a>-->
+            <div class="botton_admin"> 
+                <a href="{{url_for('login_page')}}">Pengelola</a>
+            </div>
+          </div>
+          <div class="row button">
+            <!--<a href="login_user.html"><input type="submit" value="Pengunjung"></a>-->
+            <div class="botton_admin">
+              <a href="{{url_for('login_user')}}">Pengunjung</a>
+            </div>
+          </div> 
+        </form>
+      </div>
+    </div>
+  </body>
+
+</html>

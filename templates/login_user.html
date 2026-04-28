@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Login Form | Pelayanan Statistik Terpadu BPS Surabaya</title> 
+    <link rel="stylesheet" href="static/css/login_user.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="title"><span>Login Form</span></div>
+        <form action="{{url_for('login_user')}}" method="post">
+          <div class="row">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Enter Nama Lengkap" name="nama_lengkap" id="nama_lengkap" required>
+          </div>
+          <div class="row">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Enter Password" name="password" id="password" required>
+          </div>
+          <div class="pass"><a href="#">Lupa Password?</a></div>
+          <div class="row button">
+            {% with messages = get_flashed_messages()  %}
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              {{ message }}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+          </div>
+          <div class="row button">
+            <input type="submit" value="Login">
+          </div>
+          <div class="signup-link">Belum punya akun? Daftar <a href="{{url_for('registrasi')}}"> disini</a></div>
+        </form>
+      </div>
+    </div>
+
+  </body>
+</html>

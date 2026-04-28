@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicons -->
+    <link href="static/img/icon/logo_pst-20230313081224.png" rel="icon">
+    <link href="static/img/icon/logo_pst-20230313081224.png" rel="apple-touch-icon">
+
+    <!-- Vendor CSS Files -->
+    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="static/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+    <!-- Slick Slider JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <title>Perpustakaan - PST BPS Surabaya</title>
+    <link rel="stylesheet" type="text/css" href="static/css/perpustakaan.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!--header -->
+    <header>
+        <div class="colom">
+            <h1 class="logo"><a href="{{url_for('perpustakaan')}}"><img src="static/img/icon/logo bps(2).png" alt="Logo BPS Surabaya"></a></h1>
+        </div>
+    </header>
+    
+    <!--content-->
+    <div class="section">
+        <div class="container">
+            <h1>Publikasi Badan Pusat Statistik Kota Surabaya</h1>
+            <form action="{{url_for('rekomendasi')}}" method="post">
+                <input type="text" name="search" autocomplete="off" placeholder="Masukkan kata kunci spesifik. Contoh: Kecamatan Gubeng">
+                <button type="submit">Cari</button>
+            </form>
+        </div>
+    </div>
+    <div class="section">
+        <div class="slider-container">
+            <h1>Publikasi Terbaru</h1>
+            <div class="slider">
+                {% if data_publikasi %}
+                    {% for publikasi in data_publikasi[:8] %}
+                        <a href="{{url_for('publikasi_detail', id = publikasi.id_buku)}}">
+                            <div class="slide"><img src="{{ publikasi.image_url }}" alt="{{ publikasi.judul }}"></div>
+                        </a>
+                    {% endfor %}
+                {% else %}
+                    <p>Tidak ada publikasi yang tersedia.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="slider-container">
+            <h1>Publikasi Favorit</h1>
+            <div class="slider">
+                 {% if jumlah_rating %}
+                    {% for publikasi in jumlah_rating[:8] %}
+                        <a href="{{url_for('publikasi_detail', id = publikasi.id_buku)}}">
+                            <div class="slide"><img src="{{ publikasi.image_url }}" alt="{{ publikasi.judul }}"></div>
+                        </a>
+                    {% endfor %}
+                {% else %}
+                    <p>Tidak ada publikasi yang tersedia.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!--footer-->
+    <footer id="footer">
+        <p>Badan Pusat Statistik Kota Surabaya<br>
+            Jl. A. Yani 152 E Surabaya 60231 Jawa Timur Indonesia, Telp (62-31) 82516020, Faks (62-31) 8296691, Mailbox : bps3578@bps.go.id<br>
+            Hak Cipta &copy; 2023 Badan Pusat Statistik<br>
+            Semua Hak Dilindungi</p>
+        <!--Copyright-->
+        <div class="container d-md-flex py-4">
+            <div class="me-md-auto text-center text-md-start">
+                <div class="container">
+                    <div class="row">
+                        <h2>Badan Pusat Statistik Kota Surabaya - 2023</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row1">
+                <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                    <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                    <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                    <a href="https://www.instagram.com/bpskotasurabaya/" class="instagram"><i class="bx bxl-instagram"></i></a>
+                    <a href="https://youtube.com/@bpskotasurabaya3578?si=6hizIBuXB3ycNiZb" class="youtube"><i class="bx bxl-youtube"></i></a>
+                    <!--<a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>-->
+                    <!--<a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>-->
+                </div>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    
+    <!-- Vendor JS Files -->
+    <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="static/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="static/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="static/vendor/php-email-form/validate.js"></script>
+
+
+    <!-- Template Main JS File -->
+    <script src="static/js/main.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.slider').slick({
+                dots: true, // Tampilkan titik navigasi
+                infinite: true, // Aktifkan loop tak terbatas
+                speed: 400, // Kecepatan animasi
+                slidesToShow: 3, // Jumlah slide yang ditampilkan pada satu waktu
+                adaptiveHeight: true, // Sesuaikan tinggi slide dengan konten
+                autoplay: true, // Aktifkan autoplay
+                autoplaySpeed: 2000, // Kecepatan autoplay dalam milidetik
+                responsive: [
+                    {
+                        breakpoint: 1024, // atur breakpoint untuk ukuran layar 1024px
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                            infinite: true,
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 600, // atur breakpoint untuk ukuran layar 600px
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2
+                        }
+                    },
+                    {
+                        breakpoint: 480, // atur breakpoint untuk ukuran layar 480px
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                    // Anda dapat menambahkan lebih banyak breakpoint jika diperlukan
+                ]
+            });
+        });
+    </script>
+
+</body>
+
+</html>

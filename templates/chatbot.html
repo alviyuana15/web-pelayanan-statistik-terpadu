@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('chatbot') }}">
+    <link rel="stylesheet" type="text/css" href="static/css/chatbot.css">
+</head>
+
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>Chatbot</h2>
+        </div>
+        <div class="chat-body" id="chat-body">
+            <!-- Chat messages will be displayed here -->
+            <div class="input-message" id="input-message">
+                <div class="chat-message-received">Hai, ada yang perlu ditanyakan?</div>
+                <div class="chat-message-received">Berikut list pertanyaan yang dapat kami jawab: <br>
+                    1. Apa itu Pelayanan Statistik Digital? <br>
+                    2. Bagaimana cara kita menemukan publikasi di Pelayanan Statistik Terpadu Digital ini? <br>
+                    3. Bagaimana cara konsultasi tentang publikasi digital? <br>
+                </div>
+                <div class="chat-message-received">Untuk pengembangan fitur, pengguna dapat memberikan aspirasi melalui menu survey kepuasan yang terdapat dalam website. Terima kasih.</div>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="chat-input">
+            <input class="input-message" type="text" id="user-input" placeholder="Tulis Pesan Anda...">
+            <button class="input-send" onclick="sendMessage()">
+                <svg style="width:24px;height:24px">
+                    <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
+                  </svg>
+            </button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+</body>
+
+</html>
